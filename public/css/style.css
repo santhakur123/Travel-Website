@@ -1,0 +1,85 @@
+body{
+    font-family:"Plus Jakarta Sans",sans-serif !important;
+
+    flex-direction:color;
+    min-height:100vh;
+}
+
+
+
+.navbar{
+    height:5rem;
+   background-color:white;
+}
+.fa-solid{
+    color:#fe4248;
+    font-size: 2rem;
+
+}
+.nav-link{
+    color:#222222 !important;
+}
+/*Footer /hover ka matlab jese hi uspr jaye vo underline a jaye uske neeche*/
+.f-info-links a{
+    text-decoration: none;
+    color:#222222;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.f-info-socials,.f-info-links,.f-info-brand{
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+.f-info{
+    text-align: center;
+    height:8rem;
+    background-color:#ebebeb ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: space-evenly;
+}
+/*cards */
+.listing-card{
+    border:none !important;
+    margin-bottom:2rem;
+}
+.card-img-top{
+    border-radius:1rem !important;
+    width:100% !important;
+    object-fit:cover !important;
+}
+.card-body{
+    padding:0 !important;
+}
+/* used to remove lines from anchor tag*/
+.listing-link{
+text-decoration: none;
+}
+/*card effect jese hi card ki image ke upar cursor le jayenge to vo color change wagera kuch ho jayega*/
+.card-img-overlay{
+    opacity:0;
+
+}
+.card-img-overlay:hover{
+    opacity:0.2;
+    background-color: white;
+}
+.add-btn{
+   background-color: #fe4248 !important; 
+   border:none !important;
+}
+.edit-btn{
+    background-color: #fe4248 !important; 
+    border:none !important;  
+}
+/* Show page*/

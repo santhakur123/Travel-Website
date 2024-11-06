@@ -1,0 +1,30 @@
+<!-- < %if(success && success.length){%>
+    <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
+        < %=success%>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+< %}%>
+upar wale succes.length ka matlab ye h ki agar us alert me message nahi hoga to vo display nahi karega -->
+<!-- upar jo dismissible likha h usse jo alert h usko cross sign se hata denge -->
+
+<!-- error flash ke liye-
+< %if(error && error.length){%>
+    <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
+        < %=error%>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+ < %}%> -->
+
+ <% if (typeof success !== 'undefined' && success.length) { %>
+  <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
+    <%= success %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+
+<% if (typeof error !== 'undefined' && error.length) { %>
+  <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
+    <%= error %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>

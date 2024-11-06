@@ -1,0 +1,164 @@
+<% layout("/layouts/boilerplate")%>
+
+<!--isse vo message yaha pr display hoga-->
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUNTERLOST</title>
+</head>-->
+<!-- <body> -->
+    <!-- <h4> Your listing data is there</h4> -->
+      <style>
+      #filters{
+        display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+        
+      }
+      .filter{
+        text-align: center;
+        margin-right: 2rem;
+        margin-top: 2rem;
+        opacity:0.5;
+      }
+      .filter:hover{
+        opacity:1;
+        cursor:pointer;
+      }
+      .filter p{
+        font-size:0.8rem ;
+      }
+      .tax-font{
+        display:none;  /* iska matlab ye h ki ye hidden rahega jb hum clicked karenge to a jayega */
+      }
+      .tax-toggle{
+        border:1px solid black;
+         border-radius: 1rem;
+         height:3rem;
+         padding:1rem;
+         margin-left: 1rem;
+         display:flex;
+         align-items: center;
+         
+      }
+
+      
+     </style> 
+       <div id="filters">
+      <div class="filter">
+       <div> <i class="fa-solid fa-fire">
+        </i></div>
+        <a class="nav-link" href="/listings/trending">Trending</a>
+        
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-person-booth">
+        </i></div>
+        <a class="nav-link" href="/listings/rooms">Rooms</a>
+
+      </div>
+      <div class="filter">
+       <div> <i class="fa-solid fa-bed"></i></div>
+       <a class="nav-link" href="/listings/bed">Bed</a>
+
+      </div>
+      <div class="filter">
+       <div> <i class="fa-solid fa-mountain-city">
+        </i></div>
+        <a class="nav-link" href="/listings/iconiccities">Iconic Cities</a>
+       
+      </div>
+      <div class="filter">
+       <div> <i class="fa-solid fa-campground">
+        </i></div>
+        <a class="nav-link" href="/listings/camping">Camping</a>
+
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-cow">
+        </i></div>
+        <a class="nav-link" href="/listings/farms">Farms</a>
+
+      </div>
+      <div class="filter">
+       <div> <i class="fa-solid fa-snowflake">
+        </i></div>
+        <a class="nav-link" href="/listings/arcticpools">Arctic Pools</a>
+
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-warehouse">
+        </i></div>
+        <a class="nav-link" href="/listings/treehouse">TreeHouse</a>
+
+      </div>
+      <div class="filter">
+       <div> <i class="fa-solid fa-hurricane">
+        </i></div>
+        <a class="nav-link" href="/listings/tropical">Tropical</a>
+
+      </div>
+      <div class="tax-toggle">
+        <div class="form-check-reverse form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+        </div>
+      </div>
+     </div>  
+    <div class="row row-cols-lg-3 row-cols-md-1 mt-3">
+      <% for(let pata of bata){%>
+       <a href="/listings/<%=pata.id%>" class="listing-link">
+        <div class="card col listing-card" style="width: 18rem;">
+          <img src="<%=pata.image.url%>" class="card-img-top" alt="listing_image" style="height:20rem;"/>
+          <div class="card-img-overlay"> </div>
+          <div class="card-body">
+            <p class="card-text">
+              <%= pata.title %><br/>
+              
+             <%= (pata.price !== undefined && pata.price !== null) ? pata.price.toLocaleString('en-IN', { style: 'currency', currency: 'INR' }) : 'Price not available' %> / night
+              
+              <i class="tax-font"> &nbsp; &nbsp; +18% GST</i>
+   
+            </p>
+          </div>
+        </div>
+      </a>
+  
+          <%}%>
+          
+      
+
+    </div>
+    
+   <!--- <ul>
+        <form method="GET" action="/listings/new">
+        <button> Create new listings</button>
+        </form>
+   % for(let pata of bata){%
+  <li> <a  href="/listings/%=pata.id %>">%= pata.title %> </a></li>
+ye anchor tag pata naam rekha uska output generate hua h usko link me convert kar dega
+
+    %}%>   //In sb me % ke age ye wala sign < lagega
+    
+   </ul>
+    
+</body>-->
+<!--</html>-->
+<!-- addding eventlistener to display taxes -->
+
+ <script>
+  let taxSwitch=document.getElementById("flexSwitchCheckDefault");
+  taxSwitch.addEventListener("click",()=>{
+    let taxfont=document.getElementsByClassName("tax-font");
+    for(font of taxfont){
+      if(font.style.display !="inline"){
+        font.style.display="inline";
+      }else{
+        font.style.display="none";
+      }
+    }
+    
+  });
+</script> 

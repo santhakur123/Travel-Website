@@ -1,0 +1,54 @@
+<% layout("/layouts/boilerplate")%>
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUNTERLOST</title>
+</head>-->
+<div class="row">
+    <div class="col-8 offset-2">
+<body>
+    <h2> Edit listings</h2>
+    <form method="POST" action="/listings/<%=bfi.id%>?_method=PUT" novalidate class="needs-validation">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+        <input value="<%=bfi.title%>" name="title" type="text" class="form-control" required>
+        </div>
+        <br/><br/>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+        <textarea  name="description" type="text" class="form-control" required>value="<%=bfi.description%>"</textarea>
+        </div>
+        <br/><br/>
+        <div class="mb-3">
+            Original Listing Image <br>
+            <img src="<%=bfi.image.url%>" height="100cm" width="100cm"/>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">  New Upload Image</label>
+         <input
+           
+           name="image" type="file" class="form-control" > 
+        </div>
+        <br/><br/>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+        <input value="<%=bfi.price%>" type="number" name="price" class="form-control" required>
+        </div>
+        <br/><br/>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+        <input value="<%=bfi.location%>" name="location" type="text" class="form-control" required>
+        </div>
+        <br/><br/>
+        <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+        <input value="<%=bfi.country%>" name="country" type="text" class="form-control" required>
+       </div>
+        <button class="btn btn-dark edit-btn "> Edit  </button>
+    </form>
+</body>
+</div>
+</div>
+<!--</html>-->
