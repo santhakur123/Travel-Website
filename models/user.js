@@ -7,12 +7,11 @@ const userSchema=new Schema({
         type:String,
         required:true,
     },
-   // username and password automatically define by passport-local-mongoose
-   //so we not need to define them, in schema
+   
 });
 
-userSchema.plugin(passportLocalMongoose);//ye username,password,hashing wagera sb automatically apply kr dega
-//you can use this from passport website from passportlocalmongoose
+userSchema.plugin(passportLocalMongoose);
+
 
 const User=mongoose.model("User",userSchema);
 

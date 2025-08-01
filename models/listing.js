@@ -14,7 +14,7 @@ const listingSchema= new Schema({
       
         
       
-    },//ye ek ternary operator h if else ki tarah or ye default image set karne ke liye h 
+    },
     price:Number,
     location:String,
     country:String,
